@@ -1,3 +1,13 @@
+import Header from "./components/header/Header";
+import Searchbar from "./components/searchbar/Searchbar";
+
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>
+    return (
+        <>
+        <Header />
+        <main>
+            <Searchbar />
+        </main>
+        </>
+    )
 }

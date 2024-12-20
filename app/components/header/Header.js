@@ -21,7 +21,7 @@ export default function Header () {
         </div>
 
         <div className="theme-switch-container">
-            <label htmlFor="theme-switch" id="switch" className="switch">
+            <label htmlFor="theme-switch" id="theme-switch" className="theme-switch">
                 <input type="checkbox" id="theme-slider" className="theme-slider" />
                 <span className="slider round"></span>
             </label>

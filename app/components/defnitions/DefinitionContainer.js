@@ -13,14 +13,16 @@ export default function DefinitionContainer ({data}) {
                     <h1>{result.word}</h1>
                     <span>{result.phonetic}</span>
                 </div>
-                {result.meanings.map((speech, index) => (
-                    <div key={index}>
+                {result.meanings.map((speech, idx) => (
+                    <div key={idx}>
                         <span>{speech.partOfSpeech}</span>
                         <p>Meaning</p>
-                        {speech.definitions.map((definition, index) => (
-                            <ul key={index}>
-                                <li>{definition.definition}</li>
-                            </ul>
+                        {speech.definitions.map((definition, i) => (
+                            <div>
+                                <ul key={i}>
+                                    <li>{definition.definition}</li>
+                                </ul>
+                            </div>
                         ))}
                     </div>
                 ))}

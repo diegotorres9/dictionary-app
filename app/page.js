@@ -1,18 +1,18 @@
 "use client";
 
-import { useState} from "react";
+import { useState } from "react";
 import Searchbar from "./components/searchbar/Searchbar";
 import DefinitionContainer from "./components/defnitions/DefinitionContainer";
 
 
 export default function Page() {
     const [inputValue, setInputValue] = useState('');
-    const [data, setData] = useState('');
+    const [data, setData] = useState([]);
 
-
-    const handleSearch = (e) => {
+        const handleSearch = (e) => {
         setInputValue(e.target.value);
     };
+
 
     const fetchData = async (event) => {
         if(event) event.preventDefault();

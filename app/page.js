@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Searchbar from "./components/searchbar/Searchbar";
-import DefinitionContainer from "./components/defnitions/DefinitionContainer";
+import DefinitionContainer from "./components/definitions/DefinitionContainer";
 
 
 export default function Page() {

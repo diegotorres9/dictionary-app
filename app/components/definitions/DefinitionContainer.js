@@ -19,7 +19,6 @@ export default function DefinitionContainer ({data}) {
                     <h1>{word}</h1>
                     <span>{phonetic}</span>
                     {sounds.map((sound) => {
-                    // console.log(sound.audio);
                     const pronounce = sound.audio;
                     const audio = new Audio(pronounce);
                     return (

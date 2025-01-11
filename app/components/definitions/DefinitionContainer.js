@@ -15,8 +15,8 @@ export default function DefinitionContainer ({data}) {
 
             return (
             <div className="definition-wrapper">
-                <div>
-                    <h1 className="text-3xl">{word}</h1>
+                <div key={index}>
+                    <h1 className="text-9xl">{word}</h1>
                     <span>{phonetic}</span>
                     {sounds.map((sound) => {
                     const pronounce = sound.audio;

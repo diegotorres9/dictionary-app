@@ -15,14 +15,14 @@ export default function DefinitionContainer ({data}) {
 
             return (
             <div key={idx} className="definition-wrapper">
-                <div>
-                    <h1 className="text-9xl">{word}</h1>
-                    <span>{phonetic}</span>
+                <div className="grid grid-cols-top-grid">
+                    <h1 className="text-base lg:text-lg">{word}</h1>
+                    <span className="text-violet">{phonetic}</span>
                     {sounds.map((sound) => {
                     const pronounce = sound.audio;
                     const audio = new Audio(pronounce);
                     return (
-                        <button key={crypto.randomUUID()} onClick={() => audio.play()}>
+                        <button className="col-start-2 row-start-1 row-span-2" key={crypto.randomUUID()} onClick={() => audio.play()}>
                             <Image 
                                 width={78}
                                 height={78}
@@ -38,14 +38,14 @@ export default function DefinitionContainer ({data}) {
                         <div key={idx}>
                             <span>{meaning.partOfSpeech}</span>
                             <p>Meaning</p>
-                            <ul>
+                            <ul className="marker:text-violet list-disc">
                                 {meaning.definitions.map((define, index) => (
                                     <li key={index}>{define.definition}</li>
                                 ))}
                             </ul>
                             <div>
                                 <p>{meaning.synonyms.length === 0 ? '' : 'Synonymns'}</p>
-                                <ul>
+                                <ul className="marker:text-violet list-disc">
                                     {meaning.synonyms.map((synonym, i) => (
                                         <li key={i}>{synonym.length === 0 ? '' : synonym}</li>
                                     ))}

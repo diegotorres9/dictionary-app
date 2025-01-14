@@ -12,7 +12,7 @@
     @font-face {
         font-family: 'Inter';
         font-style: normal;
-        font-weight: 900;
+        font-weight: 700;
         src: url('../../public/fonts/inter/static/Inter-Bold.ttf') format("truetype");
     }
     @font-face {
@@ -24,13 +24,13 @@
         @font-face {
         font-family: 'Lora';
         font-style: normal;
-        font-weight: 900;
+        font-weight: 700;
         src: url('../../public/fonts/lora/static/Lora-Bold.ttf') format("truetype");
     }
     @font-face {
         font-family: 'Lora';
         font-style: italic;
-        font-weight: 900;
+        font-weight: 700;
         src: url('../../public/fonts/lora/static/Lora-BoldItalic.ttf') format("truetype");
     }
     @font-face {
@@ -42,7 +42,7 @@
     @font-face {
         font-family: 'Inconsolata';
         font-style: normal;
-        font-weight: 900;
+        font-weight: 700;
         src: url('../../public/fonts/inconsolata/static/Inconsolata-Regular.ttf') format("truetype");
     }
 }

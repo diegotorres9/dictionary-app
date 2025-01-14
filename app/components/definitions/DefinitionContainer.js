@@ -8,21 +8,21 @@ export default function DefinitionContainer ({data}) {
     return (
         <section className="results-container">
         {/* {data && <pre>{JSON.stringify(data, null, 2)}</pre>} */}
-        {data.map((result, index) => {
+        {data.map((result, idx) => {
             const {word, phonetic, sourceUrls, meanings, phonetics} = result;
 
             const sounds = Object.values(phonetics).filter(sounds => sounds.audio !== "");
 
             return (
-            <div className="definition-wrapper">
-                <div key={index}>
+            <div key={idx} className="definition-wrapper">
+                <div>
                     <h1 className="text-9xl">{word}</h1>
                     <span>{phonetic}</span>
                     {sounds.map((sound) => {
                     const pronounce = sound.audio;
                     const audio = new Audio(pronounce);
                     return (
-                        <button onClick={() => audio.play()}>
+                        <button key={crypto.randomUUID()} onClick={() => audio.play()}>
                             <Image 
                                 width={78}
                                 height={78}
@@ -32,23 +32,22 @@ export default function DefinitionContainer ({data}) {
                         </button>
                     )
                     })}
-
                 </div>
                 <div>
-                    {meanings.map((meaning) => (
-                        <div>
+                    {meanings.map((meaning, idx) => (
+                        <div key={idx}>
                             <span>{meaning.partOfSpeech}</span>
                             <p>Meaning</p>
                             <ul>
-                                {meaning.definitions.map((define) => (
-                                    <li>{define.definition}</li>
+                                {meaning.definitions.map((define, index) => (
+                                    <li key={index}>{define.definition}</li>
                                 ))}
                             </ul>
                             <div>
                                 <p>{meaning.synonyms.length === 0 ? '' : 'Synonymns'}</p>
                                 <ul>
-                                    {meaning.synonyms.map((synonym) => (
-                                        <li>{synonym.length === 0 ? '' : synonym}</li>
+                                    {meaning.synonyms.map((synonym, i) => (
+                                        <li key={i}>{synonym.length === 0 ? '' : synonym}</li>
                                     ))}
                                 </ul>
                             </div>

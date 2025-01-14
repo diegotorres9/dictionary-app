@@ -10,6 +10,11 @@ module.exports = {
       base: '32px',
       lg: '64px'
     },
+    fontFamily: {
+      'sans': ['Inter', 'system-ui', 'ui-sans-serif'],
+      'serif': ['Lora', 'ui-serif', 'Georgia'],
+      'mono': ['Inconsolata', 'ui-monospace', 'SFMono-regular']
+    },
     extend: {
       colors: {
         'violet': '#A445ED',

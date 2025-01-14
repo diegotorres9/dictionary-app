@@ -18,11 +18,11 @@ export default function DefinitionContainer ({data}) {
                 <div className="grid grid-cols-top-grid">
                     <h1 className="text-base lg:text-lg">{word}</h1>
                     <span className="text-violet">{phonetic}</span>
-                    {sounds.map((sound) => {
+                    {sounds.map((sound, ix) => {
                     const pronounce = sound.audio;
                     const audio = new Audio(pronounce);
                     return (
-                        <button className="col-start-2 row-start-1 row-span-2" key={crypto.randomUUID()} onClick={() => audio.play()}>
+                        <button className="col-start-2 row-start-1 row-span-2" key={ix} onClick={() => audio.play()}>
                             <Image 
                                 width={78}
                                 height={78}

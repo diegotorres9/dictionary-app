@@ -6,7 +6,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      padding: {
+        'xl-x': '350px',
+        'xl-t': '58px',
+        'xl-b': '124px'
+      }
+    },
   },
   plugins: [],
 }

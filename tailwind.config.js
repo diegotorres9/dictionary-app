@@ -6,7 +6,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+    fontSize: {
+      base: '32px',
+      lg: '64px'
+    },
     extend: {
+      colors: {
+        'violet': '#A445ED',
+      },
+      gridTemplateColumns: {
+        'top-grid': '1fr 80px'
+      },
       padding: {
         'xl-x': '350px',
         'xl-t': '58px',

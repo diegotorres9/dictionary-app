@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image"
 import AppLogo from "../../../public/images/logo.svg";
 import MoonIcon from "../../../public/images/icon-moon.svg";
 import styles from "./headerstyles.module.css";
 
-export default function Header () {
+export default function Header ({fontChange}) {
     return (
     <header className={styles.header}>
         <Image 
@@ -13,10 +15,10 @@ export default function Header () {
             src={AppLogo}
         />
         <div className="font-select">
-            <select name="fonts" id="font-select" className="font-select" aria-label="font-select">
-            <option value="sans-serif">Sans Serif</option>
-            <option value="serif">Serif</option>
-            <option value="mono">Mono</option>
+            <select name="fonts" id="font-select" className="font-select" aria-label="font-select" onChange={fontChange}>
+            <option value="font-sans">Sans Serif</option>
+            <option value="font-serif">Serif</option>
+            <option value="font-mono">Mono</option>
         </select>
         </div>
 

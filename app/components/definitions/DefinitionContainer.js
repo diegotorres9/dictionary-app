@@ -1,9 +1,11 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image";
 import PlayButton from "../../../public/images/icon-play.svg";
 
 export default function DefinitionContainer ({data}) {
+    const [isClient, setIsClient] = useState(false);
     useEffect(() => {
+        setIsClient(true);
     }, [data]);
     return (
         <section className="results-container">
@@ -16,7 +18,7 @@ export default function DefinitionContainer ({data}) {
             return (
             <div key={idx} className="definition-wrapper">
                 <div className="grid grid-cols-top-grid">
-                    <h1 className="text-base lg:text-lg">{word}</h1>
+                    <h1 className="text-base lg:text-lg font-bold">{word}</h1>
                     <span className="text-violet">{phonetic}</span>
                     {sounds.map((sound, ix) => {
                     const pronounce = sound.audio;

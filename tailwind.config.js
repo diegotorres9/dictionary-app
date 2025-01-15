@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
+  darkMode: 'selector',
   theme: {
     fontSize: {
       base: '32px',
@@ -18,9 +19,11 @@ module.exports = {
     extend: {
       colors: {
         'violet': '#A445ED',
+        'dark-gray': '#757575'
       },
       gridTemplateColumns: {
-        'top-grid': '1fr 80px'
+        'top-grid': '1fr 80px',
+        'header-grid': '1fr auto 100px'
       },
       padding: {
         'xl-x': '350px',
@@ -29,6 +32,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")
+  ],
 }
 

@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Image from "next/image";
 import PlayButton from "../../../public/images/icon-play.svg";
 
 export default function DefinitionContainer ({data}) {
-    const [isClient, setIsClient] = useState(false);
     useEffect(() => {
-        setIsClient(true);
     }, [data]);
     return (
         <section className="results-container">

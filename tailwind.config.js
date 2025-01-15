@@ -31,6 +31,12 @@ module.exports = {
         'xl-b': '124px'
       }
     },
+    variants: {
+      extend: {
+        backgroundColor: ['checked'],
+        borderColor: ['checked']
+      }
+    }
   },
   plugins: [
     require("@tailwindcss/forms")

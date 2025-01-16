@@ -36,11 +36,11 @@ export default function DefinitionContainer ({data}) {
                 <div>
                     {meanings.map((meaning, idx) => (
                         <div key={idx}>
-                            <span>{meaning.partOfSpeech}</span>
+                            <span className="font-bold italic">{meaning.partOfSpeech}</span>
                             <p>Meaning</p>
-                            <ul className="marker:text-violet list-disc">
+                            <ul className="marker:text-violet list-disc mx-6 mt-[17px] lg:ml-6 lg:mt-6 lg:mb-6">
                                 {meaning.definitions.map((define, index) => (
-                                    <li key={index}>{define.definition}</li>
+                                    <li key={index} className="mb-[13px] leading-6">{define.definition}</li>
                                 ))}
                             </ul>
                             <div>

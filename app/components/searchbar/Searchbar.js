@@ -7,7 +7,7 @@ import styles from "./searchbar.module.css"
 export default function Searchbar ({handleSearch, fetchData}) {
 
     return (
-        <section className="search-bar-container">
+        <section className="search-bar-container mb-6 lg:mb-12">
             <form action="" className={styles.form} onSubmit={fetchData}> 
                 <input aria-label="search" type="search" id="searchbar" className={styles.searchbar} name="searchbar" onChange={handleSearch}/>
                 <button type="submit" className={`${styles.search} ${styles.button}`}>

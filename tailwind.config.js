@@ -5,6 +5,12 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
+  mode: 'jit',
+  purge: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
   darkMode: 'selector',
   theme: {
     fontSize: {
@@ -39,7 +45,6 @@ module.exports = {
     }
   },
   plugins: [
-    require("@tailwindcss/forms")
   ],
 }
 

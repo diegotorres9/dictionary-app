@@ -1,17 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}"
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  safelist: [
+    "dark"
   ],
   mode: 'jit',
-  purge: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}"
-  ],
-  darkMode: 'selector',
   theme: {
     fontSize: {
       base: '32px',
@@ -35,13 +33,17 @@ module.exports = {
         'xl-x': '350px',
         'xl-t': '58px',
         'xl-b': '124px'
+      },
+      boxShadow: {
+        'shadow-violet':'0px 5px 30px 0px rgba(164,69,237,1)'
       }
     },
     variants: {
       extend: {
         backgroundColor: ['checked'],
         borderColor: ['checked']
-      }
+      },
+      fill: ['hover', 'focus']
     }
   },
   plugins: [

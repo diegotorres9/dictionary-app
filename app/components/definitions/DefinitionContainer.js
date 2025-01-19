@@ -1,6 +1,4 @@
 import { useEffect } from "react"
-import Image from "next/image";
-import PlayButton from "../../../public/images/icon-play.svg";
 
 export default function DefinitionContainer ({data}) {
     useEffect(() => {
@@ -23,12 +21,7 @@ export default function DefinitionContainer ({data}) {
                     const audio = new Audio(pronounce);
                     return (
                         <button className="col-start-2 row-start-1 row-span-2" key={ix} onClick={() => audio.play()}>
-                            <Image 
-                                width={78}
-                                height={78}
-                                alt=""
-                                src={PlayButton}
-                            />
+                        <svg className="group" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75"><g fill="#A445ED" fillRule="evenodd"><circle className="group-hover:opacity-100" cx="37.5" cy="37.5" r="37.5" opacity=".25"/><path className="group-hover:fill-white" d="M29 27v21l21-10.5z"/></g></svg>
                         </button>
                     )
                     })}

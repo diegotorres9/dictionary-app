@@ -12,8 +12,12 @@ module.exports = {
   mode: 'jit',
   theme: {
     fontSize: {
-      base: '32px',
-      lg: '64px'
+      'heading': '32px',
+      'heading-lg': '64px',
+      sm : '15px',
+      'md': '18px',
+      
+
     },
     fontFamily: {
       'sans': ['Inter', 'system-ui', 'ui-sans-serif'],

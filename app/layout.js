@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark" suppressHydrationWarning={true}>
         <body className={`px-6 pt-6 pb-auto lg:px-xl-x lg:pt-xl-t lg:pb-xl-b ${selectFont}`}>
             <Theme>
-                <Header fontChange={fontChange} />
+                <Header fontChange={fontChange} selectFont={selectFont}/>
                 {children}
             </Theme>
         </body>

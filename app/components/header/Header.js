@@ -1,31 +1,26 @@
 "use client";
 
-import Image from "next/image"
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import AppLogo from "../../../public/images/logo.svg";
+import useClickOutside from "../../hooks/ClickOutside";
 
 
-export default function Header ({fontChange}) {
+export default function Header ({fontChange, selectFont}) {
     const {systemTheme, theme, setTheme } = useTheme();
     const currentTheme = theme === 'system' ? systemTheme : theme;
 
     const [isOpen, setOpen] = useState(false);
-    const handleDropdown = () => {
-        setOpen(!isOpen);
-    }
+    const ref = useClickOutside(() => setOpen(false));
+
     return (
     <header className='grid grid-cols-header-grid items-center mb-6 lg:mb-[51.5px]'>
-        <Image 
-            width={32}
-            height={36.5}
-            alt="Dictionary App Logo."
-            src={AppLogo}
-        />
-        <div className="font-select relative inline-block text-left">
-            <div>
-                <button className="inline-flex w-full justify-center" onClick={handleDropdown}>
-                    Sans Serif
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="38" viewBox="0 0 34 38"><g fill="none" fillRule="evenodd" stroke="#838383" strokeLinecap="round" strokeWidth="1.5"><path d="M1 33V5a4 4 0 0 1 4-4h26.8A1.2 1.2 0 0 1 33 2.2v26.228M5 29h28M5 37h28"/><path strokeLinejoin="round" d="M5 37a4 4 0 1 1 0-8"/><path d="M11 9h12"/></g></svg>
+        <div ref={ref} className="font-select relative inline-block text-left">
+            <>
+                <button className="inline-flex w-full justify-center" onClick={() => setOpen(true)}>
+                    {selectFont === 'font-sans' && 'Sans Serif'}
+                    {selectFont === 'font-serif' && 'Serif'}
+                    {selectFont === 'font-mono' && 'Mono'}
                     <svg className="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="#A445ED" aria-hidden="true" data-slot="icon">
                         <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                     </svg>
@@ -37,13 +32,7 @@ export default function Header ({fontChange}) {
                         <li className="block px-4 py-2 font-mono dark:text-white hover:text-violet hover:cursor-pointer" id="font-mono" onClick={fontChange}>Mono</li>
                     </ul>
                 </div>
-            </div>
-
-            {/* <select name="fonts" id="font-select" className="font-select block rounded-md focus:border-violet" aria-label="font-select" onChange={fontChange}>
-                <option className="focus:font-sans" value="font-sans">Sans Serif</option>
-                <option className="font-serif" value="font-serif">Serif</option>
-                <option className="font-mono" value="font-mono">Mono</option>
-            </select> */}
+            </>
         </div>
 
         <div className="theme-switch-container justify-self-end flex justify-self-center">

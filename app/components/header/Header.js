@@ -13,15 +13,16 @@ export default function Header ({fontChange, selectFont}) {
     const ref = useClickOutside(() => setOpen(false));
 
     return (
-    <header className='grid grid-cols-header-grid items-center mb-6 lg:mb-[51.5px]'>
-        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="38" viewBox="0 0 34 38"><g fill="none" fillRule="evenodd" stroke="#838383" strokeLinecap="round" strokeWidth="1.5"><path d="M1 33V5a4 4 0 0 1 4-4h26.8A1.2 1.2 0 0 1 33 2.2v26.228M5 29h28M5 37h28"/><path strokeLinejoin="round" d="M5 37a4 4 0 1 1 0-8"/><path d="M11 9h12"/></g></svg>
-        <div ref={ref} className="font-select relative inline-block text-left">
+    <header className='grid grid-cols-[34px_1fr_1fr_1fr_10px_1fr] lg:grid-cols-[_34px_1fr_1fr_1fr_10px_100px] items-center mb-6 lg:mb-[51.5px] relative'>
+        <svg className='col-span-2' xmlns="http://www.w3.org/2000/svg" width="34" height="38" viewBox="0 0 34 38"><g fill="none" fillRule="evenodd" stroke="#838383" strokeLinecap="round" strokeWidth="1.5"><path d="M1 33V5a4 4 0 0 1 4-4h26.8A1.2 1.2 0 0 1 33 2.2v26.228M5 29h28M5 37h28"/><path strokeLinejoin="round" d="M5 37a4 4 0 1 1 0-8"/><path d="M11 9h12"/></g></svg>
+        <div ref={ref} className="font-select relative inline-block text-left col-start-3 col-span-2 justify-self-end">
             <>
                 <button className="inline-flex w-full justify-center" onClick={() => setOpen(true)}>
+                    {!selectFont && 'Sans Serif'}
                     {selectFont === 'font-sans' && 'Sans Serif'}
                     {selectFont === 'font-serif' && 'Serif'}
                     {selectFont === 'font-mono' && 'Mono'}
-                    <svg className="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="#A445ED" aria-hidden="true" data-slot="icon">
+                    <svg className="-mr-1 size-5 text-gray-400 ml-[16px]" viewBox="0 0 20 20" fill="#A445ED" aria-hidden="true" data-slot="icon">
                         <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                     </svg>
                 </button>
@@ -34,8 +35,11 @@ export default function Header ({fontChange, selectFont}) {
                 </div>
             </>
         </div>
-
-        <div className="theme-switch-container justify-self-end flex justify-self-center">
+        {/* vertical bar */}
+        <svg className="col-start-5 justify-self-end" width="1" height="32" viewBox="0 0 1 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="32" fill="#E9E9E9"/>
+        </svg>
+        <div className="theme-switch-container justify-self-end flex col-start-6">
             <label onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")} htmlFor="theme-switch" className="flex justify-between items-center p-2 relative">
             <input
                 type="checkbox"

@@ -5,6 +5,7 @@ import Searchbar from "./components/searchbar/Searchbar";
 import DefinitionContainer from "./components/definitions/DefinitionContainer";
 
 
+
 export default function Page() {
     const [inputValue, setInputValue] = useState('');
     const [data, setData] = useState([]);
@@ -33,6 +34,7 @@ export default function Page() {
                 fetchData={fetchData}
             />
             <DefinitionContainer data={data}/>
+            
         </main>
     )
 }
